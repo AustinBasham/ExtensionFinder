@@ -1,0 +1,2 @@
+Quick powershell cmd to see ext names for all users. Looking to add a more complete powershell version of the python script. 
+Get-Content C:\Users\*\AppData\Local\Google\Chrome\"User Data"\Default\Extensions\*\*\manifest.json | Select-String -Pattern '"name": *"[^"]*"' | ForEach-Object { $_.Matches.Value -replace '.*"name":\s*"(.*?)".*', '$1' }
